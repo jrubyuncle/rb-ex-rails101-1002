@@ -63,4 +63,15 @@ ch2.1
   2. gem i brakeman
      gem i rails_bets_practices
 
+ch2.1
+  1. make sure that ruby version is 2.1.2
+       ruby -v
+
+  2. make sure that rails version is 4.2.0
+       gem install rails -v 4.2.0 --verbose
+
+  3. create new project
+       rails _4.2.0_ rails101s -T
+
+
 
