@@ -117,3 +117,53 @@ ch3.4
   4. in application.css.scss, add
        @import "bootstrap-sprockets";
        @import "bootstrap";
+
+ch3.5
+  1. create new folder 'common' under app/views/
+
+  2. in folder app/views/common, create
+       _navbar.html.erb
+       _footer.html.erb
+
+  3. _navbar.html.erb
+
+       <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <a class="navbar-brand" href="/">Rails 101s</a>
+           </div>
+           <div class="collapse navbar-collapse">
+             <ul class="nav navbar-nav navbar-right">
+               <li> <%= link_to("登入", '#') %> </li>
+             </ul>
+           </div>
+         </div>
+       </nav>
+
+  4. _footer.html.erb
+
+       <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <a class="navbar-brand" href="/">Rails 101s</a>
+           </div>
+           <div class="collapse navbar-collapse">
+             <ul class="nav navbar-nav navbar-right">
+               <li> <%= link_to("登入", '#') %> </li>
+             </ul>
+           </div>
+         </div>
+       </nav>
+
+  5. in app/assets/javascripts/application.js
+       //= require turbolinks
+       //= require bootstrap/dropdown    <--- add
+       //= require bootstrap/alert       <--- add
+       //= require_tree .
+
+  6. in app/views/layouts/application.html.erb
+       <%= render "common/navbar" %>     <--- add
+       <%= yield %>
+       <%= render "common/footer" %>     <--- add
+
+
