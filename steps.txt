@@ -238,3 +238,8 @@ ch4.3
        def destroy
        end
 
+ch4.4
+  1. in app/views/groups, create files:
+       show.html.erb
+       new.html.erb
+       edit.html.erb
