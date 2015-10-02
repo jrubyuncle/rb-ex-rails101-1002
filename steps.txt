@@ -24,3 +24,13 @@ in routes.rb, add
   1. in Gemfile, add
        gem 'bootstrap-sass'
   2. run 'bundle'
+
+1.2.2
+  1. cd app/assets/stylesheets
+     mv application.css  application.css.scss
+
+  2. in application.css.scss, add
+       @import "bootstrap-sprockets";
+       @import "bootstrap";
+
+  3. re-run 'rails s'
