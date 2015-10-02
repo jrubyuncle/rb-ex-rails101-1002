@@ -83,3 +83,7 @@ ch3.1
      建立 navbar 與 footer
      建立 notice_message
 
+ch3.2-a
+  1. rails g controller groups
+
+
