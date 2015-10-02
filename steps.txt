@@ -50,3 +50,6 @@ in routes.rb, add
        <%= render "common/navbar" %>
        <%= render "common/footer" %>
 
+1.2.5
+  1. in app/views/topics/index.html.erb
+       <table class="table">
