@@ -53,3 +53,7 @@ in routes.rb, add
 1.2.5
   1. in app/views/topics/index.html.erb
        <table class="table">
+
+1.2.5-a fix bug that the style not changes
+  1. mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
+
