@@ -13,3 +13,9 @@ add 'welcome' action in topics_controller.rb
 
 in routes.rb, add
   get 'welcome', to: 'topics#welcome'
+
+create app/views/topics/welcome.html.erb
+  <h1>Hello World! (welcome.html)</h1>
+
+in routes.rb, add
+  root 'topics#index'
