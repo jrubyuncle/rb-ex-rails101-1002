@@ -201,3 +201,11 @@ ch3.6
          flash[:warning] = "this is warning"
          flash[:my_test] = "my_test"
        end
+
+ch4.1
+  1. goal
+       安裝 gem "simple_form"
+       不用 Scaffold 實作出有 CRUD 功能的 group
+       連前端網頁部分也做完
+       資料驗證 => title 欄位不能空白
+
