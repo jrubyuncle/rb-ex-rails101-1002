@@ -57,3 +57,10 @@ in routes.rb, add
 1.2.5-a fix bug that the style not changes
   1. mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
 
+ch2.1
+  1. goal: 建置一個 Rails 專案 ( 版本 4.2.0 )
+           安裝 gem: brakeman 跟 rails_best_practices
+  2. gem i brakeman
+     gem i rails_bets_practices
+
+
