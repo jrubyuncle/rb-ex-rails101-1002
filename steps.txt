@@ -9,3 +9,7 @@ rake db:migrate
 rails s
 connect to http://localhost:3000/topics
 
+add 'welcome' action in topics_controller.rb
+
+in routes.rb, add
+  get 'welcome', to: 'topics#welcome'
