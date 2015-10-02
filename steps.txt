@@ -166,4 +166,38 @@ ch3.5
        <%= yield %>
        <%= render "common/footer" %>     <--- add
 
+ch3.6
+  1. in app/helpers/application_helper/rb, add
 
+       def notice_message
+         alert_types = { notice: :success, alert: :danger }
+       
+         close_button_options = { class: "close", "data-dismiss" => "alert", "aria-hidden" => true }
+         close_button = content_tag(:button, "×", close_button_options)
+       
+         alerts = flash.map do |type, message|
+           alert_content = close_button + message
+       
+           alert_type = alert_types[type.to_sym] || type
+           alert_class = "alert alert-#{alert_type} alert-dismissable"
+       
+           content_tag(:div, alert_content, class: alert_class)
+         end
+       
+         alerts.join("\n").html_safe
+       end
+
+  2. in app/views/layouts/application.html.erb
+
+       <%= render "common/navbar" %>
+       <%= notice_message %>            <--- add
+       <%= yield %>
+       <%= render "common/footer" %>
+
+  3. in index method of groups_controller.rb
+
+       def index
+         flash[:notice] = "good morning"
+         flash[:warning] = "this is warning"
+         flash[:my_test] = "my_test"
+       end
