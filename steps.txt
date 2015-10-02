@@ -44,3 +44,9 @@ in routes.rb, add
   3. in application,js, add
        //= require bootstrap/dropdown
        //= require bootstrap/alert
+
+1.2.4
+  1. in application.html.erb, add
+       <%= render "common/navbar" %>
+       <%= render "common/footer" %>
+
