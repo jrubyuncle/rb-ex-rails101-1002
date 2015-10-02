@@ -216,3 +216,25 @@ ch4.2
   2. run 'bundle install'
 
   3. rails g simple_form:install --bootstrap
+
+ch4.3
+
+  1. in groups_controller.rb, add
+       def show
+       end
+       
+       def new
+       end
+       
+       def create
+       end
+       
+       def edit
+       end
+       
+       def update
+       end
+       
+       def destroy
+       end
+
