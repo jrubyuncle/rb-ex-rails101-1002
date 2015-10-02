@@ -1,3 +1,6 @@
 
 rails new first-app
 rails g scaffold topic title:string description:text
+rake db:migrate
+rails s
+
