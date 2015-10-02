@@ -89,5 +89,7 @@ ch3.2-a
 ch3.2-b
   2. rails g model group title:string description:text
 
+ch3.2-c
+  1. rake db:migrate
 
 
