@@ -209,3 +209,10 @@ ch4.1
        連前端網頁部分也做完
        資料驗證 => title 欄位不能空白
 
+ch4.2
+  1. in Gemfile, add
+       gem 'simple_form'
+
+  2. run 'bundle install'
+
+  3. rails g simple_form:install --bootstrap
