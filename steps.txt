@@ -92,4 +92,15 @@ ch3.2-b
 ch3.2-c
   1. rake db:migrate
 
+ch3.3
+  1. in routes.rb, add
+       root 'groups#index'
+       resource 'groups'
+
+  2. in groups_controller.rb, add
+       def index
+       end
+
+  3. in app/views/groups/, create index.html.erb
+       <h1>Hello World</h1>
 
