@@ -19,3 +19,8 @@ create app/views/topics/welcome.html.erb
 
 in routes.rb, add
   root 'topics#index'
+
+1.2.1
+  1. in Gemfile, add
+       gem 'bootstrap-sass'
+  2. run 'bundle'
