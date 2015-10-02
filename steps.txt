@@ -104,3 +104,16 @@ ch3.3
   3. in app/views/groups/, create index.html.erb
        <h1>Hello World</h1>
 
+ch3.4
+  1. in Gemfile, add
+       gem 'bootstrap-sass'                    // sAss
+
+  2. run 'bundle install'
+     保持一個原則： 動到除了 app 資料夾以外的檔案，都要重跑 rails s
+
+  3. cd app/assets/stylesheets
+     mv application.css application.css.scss   // css -> Scss
+
+  4. in application.css.scss, add
+       @import "bootstrap-sprockets";
+       @import "bootstrap";
