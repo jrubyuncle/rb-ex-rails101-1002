@@ -34,3 +34,13 @@ in routes.rb, add
        @import "bootstrap";
 
   3. re-run 'rails s'
+
+1.2.3
+  1. mkdir app/views/common
+
+  2. create app/views/common/_navbar.html.erb
+            app/views/common/_footer.html.erb
+
+  3. in application,js, add
+       //= require bootstrap/dropdown
+       //= require bootstrap/alert
