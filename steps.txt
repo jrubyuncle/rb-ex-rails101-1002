@@ -1,6 +1,11 @@
 
 rails new first-app
 rails g scaffold topic title:string description:text
+                 -----
+                   +----> singular -> model: topic.rb
+                                      topics_controller.rb
+                                      table: topics
 rake db:migrate
 rails s
+connect to http://localhost:3000/topics
 
