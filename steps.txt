@@ -300,3 +300,20 @@ ch4.6 create new action, groups#new
          <% end %>
        </div>
 
+ch4.7
+  1. in create method of groups_controller.rb, add
+       def create
+         @group = Group.new(group_params)
+         if @group.save
+           redirect_to groups_path
+           #redirect_to group_path(@group)
+         else
+           render :new
+         end
+       end
+
+       private
+       def group_params
+         params.require(:group).permit(:title, :description)
+       end
+

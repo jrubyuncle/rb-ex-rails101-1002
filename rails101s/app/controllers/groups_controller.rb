@@ -14,6 +14,13 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to groups_path
+      #redirect_to group_path(@group)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,4 +32,8 @@ class GroupsController < ApplicationController
   def destroy
   end
 
+  private
+  def group_params
+    params.require(:group).permit(:title, :description)
+  end
 end
