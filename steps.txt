@@ -445,4 +445,6 @@ ch5.2-a
 ch5.2-b
   1. rails g model post content:text group_id:integer
 
+ch5.2-c
+  1. rake db:migrate
 
