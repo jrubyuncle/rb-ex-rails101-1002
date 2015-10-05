@@ -364,4 +364,11 @@ ch4.10
          end
        end
 
+ch4.11
+  1. in destroy method of groups_controller.rb
+       def destroy
+         @group = Group.find(params[:id])
+         @group.destroy
+         redirect_to groups_path, alert: 'this group is deleted'  # <--- use alert: 'msg'
+       end
 
