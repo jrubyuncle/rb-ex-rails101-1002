@@ -353,5 +353,15 @@ ch4.9
          <% end %>
        </div>
 
+ch4.10
+  1. in update method of groups_controller.rb
+       def update
+         @group = Group.find(params[:id])
+         if @group.update(group_params)
+           redirect_to groups_path, notice: 'update ok'
+         else
+           render :update
+         end
+       end
 
 
