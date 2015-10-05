@@ -429,3 +429,14 @@ ch4.13
   1. title can not be blank
        validates :title, presence: true
 
+
+ch5.1
+  1. chapter goal
+       本章的作業目標：
+
+       - 可以在 Group 裡面 post 文章
+       - 並且文章網址是使用 /group/1/post/2 這種網址表示。
+       - 資料驗證： post 必須要有內容才能儲存 / 新增
+       - 用 before_action 來整理重複的程式碼
+
+
