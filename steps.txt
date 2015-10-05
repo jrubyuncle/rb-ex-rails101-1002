@@ -317,3 +317,23 @@ ch4.7
          params.require(:group).permit(:title, :description)
        end
 
+ch4.8
+  1. in show method of groups_controller.rb
+       def show
+         @group = Group.find(params[:id])
+       end
+
+  2. in app/views/groups/show.html.erb
+       <div class="col-md-12">
+         <div class="group">
+           <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right")%>
+         </div>
+
+         <h2><%= @group.title %></h2>
+         <p><%= @group.description %></p>
+       </div>
+
+
+
+
+
