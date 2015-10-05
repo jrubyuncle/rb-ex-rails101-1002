@@ -439,4 +439,10 @@ ch5.1
        - 資料驗證： post 必須要有內容才能儲存 / 新增
        - 用 before_action 來整理重複的程式碼
 
+ch5.2-a
+  1. rails g controller posts
+
+ch5.2-b
+  1. rails g model post content:text group_id:integer
+
 
