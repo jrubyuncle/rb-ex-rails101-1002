@@ -333,7 +333,25 @@ ch4.8
          <p><%= @group.description %></p>
        </div>
 
+ch4.9
+  1. in edit method of groups_controller.rb
+       def edit
+         @group = Group.find(params[:id])
+       end
 
+  2. in app/views/groups/edit.html.erb
+       <div class="col-md-4 col-md-offset-4">
+         <h1>修改討論版</h1>
+
+         <hr>
+         <%= simple_form_for @group do |f| %>
+           <div class="form-group">
+             <%= f.input :title, input_html: { class: "form-control"} %>
+             <%= f.input :description, input_html: { class: "form-control"} %>
+           </div>
+           <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+         <% end %>
+       </div>
 
 
 
