@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
     flash[:notice] = "good morning"
     #flash[:warning] = "this is warning"
     #flash[:my_test] = "my_test"
+    @groups = Group.all
   end
 
   def show
