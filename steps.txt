@@ -477,3 +477,17 @@ edit_group_post GET    /groups/:group_id/posts/:id/edit(.:format) posts#edit
                 PUT    /groups/:id(.:format)                      groups#update
                 DELETE /groups/:id(.:format)                      groups#destroy
 
+ch5.2-e
+  1. set relationship
+
+       class Group < ActiveRecord::Base
+         validates :title, presence: true
+
+         has_many: :posts
+       end
+
+
+       class Post < ActiveRecord::Base
+         belongs_to :group
+       end
+
