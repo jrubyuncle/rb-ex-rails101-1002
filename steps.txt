@@ -1,4 +1,7 @@
 
+1002 30%
+1005 51%  2.5hr
+
 rails new first-app
 rails g scaffold topic title:string description:text
                  -----
