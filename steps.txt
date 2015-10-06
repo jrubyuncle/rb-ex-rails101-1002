@@ -701,3 +701,6 @@ Some setup you must do manually if you haven't yet:
 ===============================================================================
 
 
+ch6.2-c
+  1. rails g devise user
+
