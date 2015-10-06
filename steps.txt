@@ -754,3 +754,7 @@ ch6.7
            u.permit(:name, :email, :password, :password_confirmation)
          end
        end
+
+ch6.8
+  1.    Hi, <%= current_user.email %>
+     -> Hi, <%= current_user.name %>
