@@ -707,3 +707,6 @@ ch6.2-c
 ch6.2-d
   1. rake db:migrate
 
+ch6.2-e
+  1. rails g devise:views
+
