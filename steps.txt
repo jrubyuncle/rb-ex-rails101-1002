@@ -766,4 +766,7 @@ ch6.10
   1. rails g migration add_user_id_to_groups user_id:integer
   2. rake db:migrate
 
+ch6.11
+  1. group belongs_to :user
+  2. user  has_many :groups
 
