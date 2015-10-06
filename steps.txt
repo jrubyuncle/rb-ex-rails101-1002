@@ -632,3 +632,12 @@ ch5.8
         belongs_to :group
         validates :content, presence: true
       end
+
+ch5.9
+  1. in posts_controller.rb
+
+       before_action :find_group
+
+       def find_group
+         @group = Group.find(params[:group_id])
+       end
