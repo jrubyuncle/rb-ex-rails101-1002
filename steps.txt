@@ -770,3 +770,6 @@ ch6.11
   1. group belongs_to :user
   2. user  has_many :groups
 
+ch6.12
+  1. replace Group with current_user.groups
+
