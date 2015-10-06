@@ -736,3 +736,9 @@ ch6.5
   1. rails g migration add_name_to_users name:string
 
   2. rake db:migrage
+
+ch6.6
+  1. in app/views/devise/registrations/new.html.erb
+
+       <%= f.input :email, required: true, autofocus: true %>
+       <%= f.input :name,  required: true %>                    # <--- add
