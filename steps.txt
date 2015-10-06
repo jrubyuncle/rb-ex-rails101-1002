@@ -742,3 +742,15 @@ ch6.6
 
        <%= f.input :email, required: true, autofocus: true %>
        <%= f.input :name,  required: true %>                    # <--- add
+
+ch6.7
+  1. in application_controller.rb
+
+       before_action :configure_permitted_parameters, if: :devise_controller?
+
+       protected
+       def configure_permitted_parameters
+         devise_parameter_sanitizer.for(:sign_up) do |u|
+           u.permit(:name, :email, :password, :password_confirmation)
+         end
+       end
