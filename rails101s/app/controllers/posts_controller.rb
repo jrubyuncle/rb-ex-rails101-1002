@@ -21,6 +21,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:group_id])
+    @post = @group.posts.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to group_path(@group), notice: 'update post ok'
+    else
+      render :update
+    end
   end
 
   def destroy
