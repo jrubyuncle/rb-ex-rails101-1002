@@ -1,6 +1,7 @@
 
 1002 30%
-1005 51%  2.5hr
+1005 51%  2.5 hr
+1006 58%  1.5 hr (posts crud)
 
 rails new first-app
 rails g scaffold topic title:string description:text
