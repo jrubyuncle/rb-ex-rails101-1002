@@ -731,3 +731,8 @@ ch6.3
 ch6.4
   1. in groups and posts controller, add
        before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+
+ch6.5
+  1. rails g migration add_name_to_users name:string
+
+  2. rake db:migrage
