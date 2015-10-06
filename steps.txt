@@ -624,3 +624,11 @@ ch5.7
          @post.destroy
          redirect_to group_path(@group), alert: 'post destroyed'
        end
+
+ch5.8
+  1. content can not be empty
+
+      class Post < ActiveRecord::Base
+        belongs_to :group
+        validates :content, presence: true
+      end
