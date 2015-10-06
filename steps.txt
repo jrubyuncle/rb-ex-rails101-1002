@@ -578,3 +578,24 @@ ch5.5-c
        def post_params
          params.require(:post).permit(:content)
        end
+
+ch5.6-a
+  1. in posts_controller.rb, add
+       def edit
+         @group = Group.find(params[:group_id])
+         @post = @group.posts.find(params[:id])
+       end
+
+  2. edit.html.erb
+       <h1 class="text-center">Edit 文章</h1>
+
+       <div class="col-md-4 col-md-offset-4">
+         <%= simple_form_for [@group,@post] do |f| %>
+           <div class="form-group">
+             <%= f.input :content, input_html: { class: "form-control"} %>
+           </div>
+           <div class="form-actions">
+             <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+           </div>
+         <% end %>
+       </div>
