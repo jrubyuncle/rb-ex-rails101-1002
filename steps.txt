@@ -613,3 +613,14 @@ ch5.6-b
       render :update
     end
   end
+
+ch5.7
+  1. in posts_controller.rb
+
+       def destroy
+         @group = Group.find(params[:group_id])
+         @post = @group.posts.find(params[:id])
+
+         @post.destroy
+         redirect_to group_path(@group), alert: 'post destroyed'
+       end
