@@ -559,3 +559,22 @@ ch5.5-b
          @post = @group.posts.new
        end
 
+ch5.5-c
+  1. in posts_controller.rb, add
+
+       def create
+         @group = Group.find(params[:group_id])
+         @post = @group.posts.create(post_params)
+
+         if @post.save
+           redirect_to group_path(@group), notice: 'create post ok'
+         else
+           render :new
+         end
+       end
+
+       private
+
+       def post_params
+         params.require(:post).permit(:content)
+       end
