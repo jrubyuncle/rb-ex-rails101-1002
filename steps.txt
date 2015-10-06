@@ -526,3 +526,25 @@ ch5.3
            <% end %>
          </tbody>
        </table>
+
+ch5.4
+  1. in posts_controller.rb, add
+       def new
+       end
+
+       def create
+       end
+
+       def edit
+       end
+
+       def update
+       end
+
+       def destroy
+       end
+
+  2. in app/views/posts/, create
+       new.html.erb
+       edit.html.erb
+
