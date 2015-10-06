@@ -548,3 +548,6 @@ ch5.4
        new.html.erb
        edit.html.erb
 
+ch5.5-a
+  1. in show.html.erb of groups controller, add
+       <%= link_to('new post', new_group_post_path(@group) , class: "btn btn-warning pull-right") %>
