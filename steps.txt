@@ -654,3 +654,7 @@ ch6.1
        客製化 devise => 新增一個 "name" 的欄位
        使用者功能 整合進 group / post 裡面 (作者機制)
        只有作者才能有 group / post 的修改/刪除權限
+
+ch6.2-a
+  1. add gem 'devise'
+  2. bundle install
