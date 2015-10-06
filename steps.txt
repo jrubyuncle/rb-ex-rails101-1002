@@ -551,3 +551,11 @@ ch5.4
 ch5.5-a
   1. in show.html.erb of groups controller, add
        <%= link_to('new post', new_group_post_path(@group) , class: "btn btn-warning pull-right") %>
+
+ch5.5-b
+  1. in posts_controller.rb, add
+       def new
+         @group = Group.find(params[:group_id])
+         @post = @group.posts.new
+       end
+
