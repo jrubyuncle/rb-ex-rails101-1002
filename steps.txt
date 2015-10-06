@@ -773,3 +773,5 @@ ch6.11
 ch6.12
   1. replace Group with current_user.groups
 
+ch6.13
+  1. show edit/delete buttons only if author
