@@ -758,3 +758,7 @@ ch6.7
 ch6.8
   1.    Hi, <%= current_user.email %>
      -> Hi, <%= current_user.name %>
+
+ch6.9
+  1. add "account setting", edit_user_registration_path
+

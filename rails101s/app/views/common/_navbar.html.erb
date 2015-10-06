@@ -16,6 +16,7 @@
             </a>
               <!-- <ul class="dropdown-menu"> -->
               <ul>
+                <li><%= link_to("account setting", edit_user_registration_path) %></li>
                 <li><%= link_to("logout", destroy_user_session_path, method: :delete) %></li>
               </ul>
           </li>
