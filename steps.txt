@@ -642,3 +642,15 @@ ch5.9
        def find_group
          @group = Group.find(params[:group_id])
        end
+
+ch6.1
+  1. chapter goal
+       本章的作業目標:
+
+       安裝 gem "devise"
+       在 navbar 安裝登入/登出按鈕
+       調整修改 devise views ( 註冊, 登入, 修改帳號頁面, ... etc)
+       利用 before_action :authenticate_user! 來做要求登入的設定
+       客製化 devise => 新增一個 "name" 的欄位
+       使用者功能 整合進 group / post 裡面 (作者機制)
+       只有作者才能有 group / post 的修改/刪除權限
