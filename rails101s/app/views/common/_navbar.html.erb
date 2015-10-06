@@ -14,7 +14,8 @@
               Hi, <%= current_user.name %>
               <b class="caret"></b>
             </a>
-              <ul class="dropdown-menu">
+              <!-- <ul class="dropdown-menu"> -->
+              <ul>
                 <li><%= link_to("logout", destroy_user_session_path, method: :delete) %></li>
               </ul>
           </li>
