@@ -793,3 +793,9 @@ ch7.1
        user 可以在 group 頁面 加入 / 退出 此 group
        User 在建立 group 後自動成為 group 的一員
        若不是 group 創辦人，就不會顯示 edit 按鈕
+
+
+ch7.2-a
+  1. rails g model group_user group_id:integer user_id:integer
+  2. rake db:migrate
+
