@@ -801,3 +801,6 @@ ch7.2-a
 
 ch7.2-b
   1. set many-to-many association between user and group
+
+ch7.3
+  1. only group members can create post
