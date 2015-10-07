@@ -807,3 +807,6 @@ ch7.3
 
 ch7.4
   1. display 'join group'/'quit group' buttons in view of groups#show
+
+ch7.5
+  1. add group creator to group members automatically
