@@ -804,3 +804,6 @@ ch7.2-b
 
 ch7.3
   1. only group members can create post
+
+ch7.4
+  1. display 'join group'/'quit group' buttons in view of groups#show
