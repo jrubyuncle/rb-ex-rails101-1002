@@ -7,4 +7,12 @@ class Post < ActiveRecord::Base
     #return true
     user && user == author
   end
+
+  def show_author_name
+    if self.author.nil?
+      "no_name"
+    else
+      self.author.name
+    end
+  end
 end
