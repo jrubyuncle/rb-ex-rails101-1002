@@ -783,4 +783,13 @@ ch6.14-a
 
 ch6.14-b
   1. display edit/delete buttons only for post author
- 
+
+ch7.1
+  1. chapter goal
+       本章的作業目標:
+
+       建立 討論版成員 ( group_user ) 設定
+       user 必須要是這個社團的成員才能發表文章
+       user 可以在 group 頁面 加入 / 退出 此 group
+       User 在建立 group 後自動成為 group 的一員
+       若不是 group 創辦人，就不會顯示 edit 按鈕
