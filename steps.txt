@@ -780,3 +780,7 @@ ch6.14-a
   1. add user_id column to table posts
        rails g migration add_user_id_to_post user_id:integer
        rake db:migrate
+
+ch6.14-b
+  1. display edit/delete buttons only for post author
+ 

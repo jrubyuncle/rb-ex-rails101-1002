@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @group.posts.create(post_params)
+    @post = current_user.posts.create(post_params)
 
     if @post.save
       redirect_to group_path(@group), notice: 'create post ok'
@@ -17,11 +17,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def update
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
 
     if @post.update(post_params)
       redirect_to group_path(@group), notice: 'update post ok'
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:group_id])
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
 
     @post.destroy
     redirect_to group_path(@group), alert: 'post destroyed'
