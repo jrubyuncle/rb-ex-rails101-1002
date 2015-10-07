@@ -799,3 +799,5 @@ ch7.2-a
   1. rails g model group_user group_id:integer user_id:integer
   2. rake db:migrate
 
+ch7.2-b
+  1. set many-to-many association between user and group
