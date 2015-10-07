@@ -775,3 +775,8 @@ ch6.12
 
 ch6.13
   1. show edit/delete buttons only if author
+
+ch6.14-a
+  1. add user_id column to table posts
+       rails g migration add_user_id_to_post user_id:integer
+       rake db:migrate
