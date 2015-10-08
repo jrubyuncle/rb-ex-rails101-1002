@@ -880,3 +880,5 @@ ch8.3 list the groups the user joined, including title, description, post count,
          </tbody>
        </table>
        </div>
+
+ch8.4 list the posts the user post
