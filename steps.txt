@@ -826,3 +826,19 @@ ch8.1 chapter goal
        post 的排列要以時間 (最新 => 最舊) 順序排列
        group 的排列要以 文章數量 當熱門度排列
        bug 解決 => 當 group 刪除時，所屬的 posts 也要跟著刪除
+
+ch8.2 support localhost:3000/account/groups and account/posts
+  1. in config/routes.rb
+       namespace :account do
+         resources :groups
+         resources :posts
+       end
+
+  2. controllers
+       rails g controller account/groups
+       rails g controller account/posts
+
+  3. views
+       app/views/account/groups/index.html.erb
+       app/views/account/posts/index.html.erb
+
