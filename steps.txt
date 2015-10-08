@@ -907,3 +907,12 @@ ch9.2 use helper
   1. post.updated_at.to_s(:long)
   2. simple_format(post.content)
   3. truncate(group.title, length: 15)
+
+ch9.3
+  1. create helper in app/helper/posts_helper.rb
+       module PostsHelper
+         def render_post_content(post)
+           simple_format(post.content)
+         end
+       end
+
