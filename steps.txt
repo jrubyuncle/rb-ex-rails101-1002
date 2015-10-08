@@ -917,3 +917,7 @@ ch9.3
        end
 
 ch9.4 extract common code to partial
+
+ch9.5 use scope
+  1. in post.rb, scope :recent, -> { order("updated_at DESC") }
+
