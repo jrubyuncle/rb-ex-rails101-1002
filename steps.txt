@@ -5,6 +5,8 @@
 1007 78%  3.5 hr (join group, quit group)
 1008 85%  2.0 hr (ch8 backend)
 1008 91%  1.0 hr (ch9 refactor)
+1008             (ch10 db:seed) from 05:11
+
 
 rails new first-app
 rails g scaffold topic title:string description:text
@@ -921,3 +923,10 @@ ch9.4 extract common code to partial
 ch9.5 use scope
   1. in post.rb, scope :recent, -> { order("updated_at DESC") }
 
+ch10.1 chapter goal
+  1. chapter goal
+       本章的作業目標:
+
+       rake 的概念解說
+       撰寫 seed.rb 檔
+       撰寫 rake dev:build => 自動化執行清空 + 重跑 migration + 種子載入資料
