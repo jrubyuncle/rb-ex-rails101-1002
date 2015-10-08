@@ -3,6 +3,7 @@
 1005 51%  2.5 hr
 1006 70%  5.0 hr (posts crud, devise)
 1007 78%  3.5 hr (join group, quit group)
+1008             (fr 1:30)
 
 rails new first-app
 rails g scaffold topic title:string description:text
@@ -813,3 +814,15 @@ ch7.5
   1. add group creator to group members automatically
 
 ch7.6 in view of groups#show, display edit/delete button only if author
+
+ch8.1 chapter goal
+
+  1. chapter goal
+       本章的作業目標:
+
+       建立使用者後台 ( 前置作業 )
+       使用者可以在後台看到自己參加的 group
+       使用可以在後台看到自己發表的 post
+       post 的排列要以時間 (最新 => 最舊) 順序排列
+       group 的排列要以 文章數量 當熱門度排列
+       bug 解決 => 當 group 刪除時，所屬的 posts 也要跟著刪除
