@@ -5,7 +5,7 @@
 1007 78%  3.5 hr (join group, quit group)
 1008 85%  2.0 hr (ch8 backend)
 1008 91%  1.0 hr (ch9 refactor)
-1008             (ch10 db:seed) from 05:11
+1008 95   40 min (ch10 db:seed)
 
 
 rails new first-app
