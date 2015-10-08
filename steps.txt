@@ -930,3 +930,7 @@ ch10.1 chapter goal
        rake 的概念解說
        撰寫 seed.rb 檔
        撰寫 rake dev:build => 自動化執行清空 + 重跑 migration + 種子載入資料
+
+ch10.2 review rake command
+  1. rake -T
+  2. rake db:migrate
