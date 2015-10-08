@@ -889,3 +889,4 @@ ch8.5 list the posts desc
          @posts = current_user.posts.order("updated_at DESC")
        end
 
+ch8.6 add posts_count in group model
