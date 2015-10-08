@@ -4,6 +4,7 @@
 1006 70%  5.0 hr (posts crud, devise)
 1007 78%  3.5 hr (join group, quit group)
 1008 85%  2.0 hr (backend)
+1008              from 04:15
 
 rails new first-app
 rails g scaffold topic title:string description:text
@@ -892,3 +893,13 @@ ch8.5 list the posts desc
 ch8.6 add posts_count in group model
 
 ch8.7 in group model, has_many :posts, dependant: :destroy
+
+ch9.1 chapter goal
+  1. chapter goal
+       本章的作業目標:
+
+       使用系統 helper 整理 code
+       自己撰寫的 helper 包裝 html
+       使用 partial 整理 html
+       使用 scope 整理 query
+
