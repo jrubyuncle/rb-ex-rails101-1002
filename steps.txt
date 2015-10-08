@@ -842,3 +842,41 @@ ch8.2 support localhost:3000/account/groups and account/posts
        app/views/account/groups/index.html.erb
        app/views/account/posts/index.html.erb
 
+ch8.3 list the groups the user joined, including title, description, post count, last update
+
+  1. in account/groups_controller.rb
+       before_action :authenticate_user!
+     
+       def index
+         @groups = current_user.participated_groups
+       end
+
+  2. in app/views/account/groups/index.html.erb
+       <div class="col-md-12">
+       
+       <h2 class="text-center">The Groups Joined</h2>
+       
+       <table class="table">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Title</th>
+             <th>Description</th>
+             <th>Post Count</th>
+             <th>Last Update</th>
+           </tr>
+         </thead>
+       
+         <tbody>
+           <% @groups.each do |group| %>
+             <tr>
+               <td>#</td>
+               <td><%= link_to(group.title, group_path(group)) %></td>
+               <td><%= group.description %></td>
+               <td><%= group.posts.count %></td>
+               <td><%= group.updated_at %></td>
+             </tr>
+           <% end %>
+         </tbody>
+       </table>
+       </div>
