@@ -3,7 +3,7 @@
 1005 51%  2.5 hr
 1006 70%  5.0 hr (posts crud, devise)
 1007 78%  3.5 hr (join group, quit group)
-1008             (fr 1:30)
+1008 85%  2.0 hr (backend)
 
 rails new first-app
 rails g scaffold topic title:string description:text
