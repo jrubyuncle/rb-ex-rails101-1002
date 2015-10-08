@@ -934,3 +934,12 @@ ch10.1 chapter goal
 ch10.2 review rake command
   1. rake -T
   2. rake db:migrate
+
+ch10.3 write seeds.rb, rake db:seed, rake db:reset
+  1. rake db:reset
+       rake db:reset 是內建的 task ，會執行一整套流程, 包含
+          db:drop        ( 資料庫移除 )
+       => db:create      ( 資料庫建立 )
+       => db:schema:load ( 資料庫欄位建立 )
+       => db:seed        ( 執行資料庫種子 )
+
