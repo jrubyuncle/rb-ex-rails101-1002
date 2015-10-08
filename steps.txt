@@ -943,3 +943,11 @@ ch10.3 write seeds.rb, rake db:seed, rake db:reset
        => db:schema:load ( 資料庫欄位建立 )
        => db:seed        ( 執行資料庫種子 )
 
+ch10.4 create lib/tasks/dev.rake
+  1. content
+       namespace :dev do
+         desc "Rebuild system"
+         task :build => ["tmp:clear", "log:clear", "db:drop", "db:create", "db:migrate"]
+         task :rebuild => ["dev:build", "db:seed"]
+       end
+
