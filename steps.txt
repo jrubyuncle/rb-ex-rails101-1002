@@ -882,3 +882,10 @@ ch8.3 list the groups the user joined, including title, description, post count,
        </div>
 
 ch8.4 list the posts the user post
+
+ch8.5 list the posts desc
+  1. in account/posts_controller.rb
+       def index
+         @posts = current_user.posts.order("updated_at DESC")
+       end
+
