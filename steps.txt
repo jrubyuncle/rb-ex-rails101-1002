@@ -903,3 +903,7 @@ ch9.1 chapter goal
        使用 partial 整理 html
        使用 scope 整理 query
 
+ch9.2 use helper
+  1. post.updated_at.to_s(:long)
+  2. simple_format(post.content)
+  3. truncate(group.title, length: 15)
