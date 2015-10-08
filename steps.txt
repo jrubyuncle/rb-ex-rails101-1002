@@ -890,3 +890,5 @@ ch8.5 list the posts desc
        end
 
 ch8.6 add posts_count in group model
+
+ch8.7 in group model, has_many :posts, dependant: :destroy
