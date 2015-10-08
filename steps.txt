@@ -916,3 +916,4 @@ ch9.3
          end
        end
 
+ch9.4 extract common code to partial
