@@ -6,6 +6,7 @@
 1008 85%  2.0 hr (ch8 backend)
 1008 91%  1.0 hr (ch9 refactor)
 1008 95   40 min (ch10 db:seed)
+1008             (ch11 deployment) 5:50
 
 
 rails new first-app
@@ -951,3 +952,10 @@ ch10.4 create lib/tasks/dev.rake
          task :rebuild => ["dev:build", "db:seed"]
        end
 
+
+ch11.1 chapter goal
+  1. chapter goal
+     本章的作業目標:
+     
+     用手動的方式將寫好的 Rails 專案 deploy 到遠端 Server 上
+     改 Capristrano 自動化部署，一個指令完成 Deploy
