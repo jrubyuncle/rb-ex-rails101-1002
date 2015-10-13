@@ -5,7 +5,7 @@
 1007 78%  3.5 hr (join group, quit group)
 1008 85%  2.0 hr (ch8 backend)
 1008 91%  1.0 hr (ch9 refactor)
-1008 95   40 min (ch10 db:seed)
+1008 95%  40 min (ch10 db:seed)
 1008             (ch11 deployment) 5:50
 
 
@@ -30,12 +30,30 @@ create app/views/topics/welcome.html.erb
 in routes.rb, add
   root 'topics#index'
 
-1.2.1
+1 Hello World!!
+
+1.1.1 create a new project
+
+1.1.2 use scaffold
+
+1.1.3 create welcome page
+
+1.1.4 setup routes
+
+1.1.5 create welcome.html.erb
+
+1.1.6 set root route: http://localhost:3000/topics
+
+1.2 use bootstrap
+
+1.2.1 install gem 'bootstrap-sass'
+
   1. in Gemfile, add
        gem 'bootstrap-sass'
   2. run 'bundle'
 
-1.2.2
+1.2.2 install css packages in rails project
+
   1. cd app/assets/stylesheets
      mv application.css  application.css.scss
 
@@ -45,7 +63,8 @@ in routes.rb, add
 
   3. re-run 'rails s'
 
-1.2.3
+1.2.3 install navbar and footbar
+
   1. mkdir app/views/common
 
   2. create app/views/common/_navbar.html.erb
@@ -55,25 +74,42 @@ in routes.rb, add
        //= require bootstrap/dropdown
        //= require bootstrap/alert
 
-1.2.4
+1.2.4 modify app/views/layouts/application.html.erb
+
   1. in application.html.erb, add
        <%= render "common/navbar" %>
        <%= render "common/footer" %>
 
-1.2.5
+1.2.5 use bootstrap table package
+
   1. in app/views/topics/index.html.erb
        <table class="table">
 
 1.2.5-a fix bug that the style not changes
+
   1. mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
 
-ch2.1
+-- why should not use scaffold?
+
+-- how to use this course for learning rails:
+
+-- how to find help:
+
+** crud
+
+** crud in rails
+
+ch2 create a rails project
+
+ch2.1 goal
+
   1. goal: 建置一個 Rails 專案 ( 版本 4.2.0 )
            安裝 gem: brakeman 跟 rails_best_practices
   2. gem i brakeman
      gem i rails_bets_practices
 
-ch2.1
+ch2.1 create new project
+
   1. make sure that ruby version is 2.1.2
        ruby -v
 
@@ -83,7 +119,10 @@ ch2.1
   3. create new project
        rails _4.2.0_ rails101s -T
 
+ch3 establish blog site manually
+
 ch3.1
+
   1. 本章的作業目標：
 
      建立一個討論版 (group)
@@ -92,6 +131,8 @@ ch3.1
      套入前端套件 Bootstrap
      建立 navbar 與 footer
      建立 notice_message
+
+ch3.2 create group
 
 ch3.2-a
   1. rails g controller groups
@@ -102,7 +143,8 @@ ch3.2-b
 ch3.2-c
   1. rake db:migrate
 
-ch3.3
+ch3.3 set routes; set home page
+
   1. in routes.rb, add
        root 'groups#index'
        resource 'groups'
@@ -114,7 +156,8 @@ ch3.3
   3. in app/views/groups/, create index.html.erb
        <h1>Hello World</h1>
 
-ch3.4
+ch3.4 use bootstrap
+
   1. in Gemfile, add
        gem 'bootstrap-sass'                    // sAss
 
@@ -128,7 +171,8 @@ ch3.4
        @import "bootstrap-sprockets";
        @import "bootstrap";
 
-ch3.5
+ch3.5 create navbar and footbar
+
   1. create new folder 'common' under app/views/
 
   2. in folder app/views/common, create
@@ -176,7 +220,8 @@ ch3.5
        <%= yield %>
        <%= render "common/footer" %>     <--- add
 
-ch3.6
+ch3.6 notice_message
+
   1. in app/helpers/application_helper/rb, add
 
        def notice_message
@@ -212,14 +257,18 @@ ch3.6
          flash[:my_test] = "my_test"
        end
 
-ch4.1
+ch4 create crud manually
+
+ch4.1 goal
+
   1. goal
        安裝 gem "simple_form"
        不用 Scaffold 實作出有 CRUD 功能的 group
        連前端網頁部分也做完
        資料驗證 => title 欄位不能空白
 
-ch4.2
+ch4.2 install gem 'simple_form'
+
   1. in Gemfile, add
        gem 'simple_form'
 
@@ -227,7 +276,7 @@ ch4.2
 
   3. rails g simple_form:install --bootstrap
 
-ch4.3
+ch4.3 pre-set: controller, add actions in groups controller
 
   1. in groups_controller.rb, add
        def show
@@ -248,13 +297,15 @@ ch4.3
        def destroy
        end
 
-ch4.4
+ch4.4 pre-set views: 
+
   1. in app/views/groups, create files:
        show.html.erb
        new.html.erb
        edit.html.erb
 
 ch4.5 set index action, groups#index
+
   1. in index method of groups_controller.rb
        @groups = Group.all
 
@@ -291,6 +342,7 @@ ch4.5 set index action, groups#index
          </div>
 
 ch4.6 create new action, groups#new
+
   1. in new method of groups_controller.rb, add
        dev new
          @group = Group.new
@@ -310,7 +362,8 @@ ch4.6 create new action, groups#new
          <% end %>
        </div>
 
-ch4.7
+ch4.7 create 'create' action
+
   1. in create method of groups_controller.rb, add
        def create
          @group = Group.new(group_params)
@@ -327,7 +380,8 @@ ch4.7
          params.require(:group).permit(:title, :description)
        end
 
-ch4.8
+ch4.8 create 'show' action
+
   1. in show method of groups_controller.rb
        def show
          @group = Group.find(params[:id])
@@ -343,7 +397,8 @@ ch4.8
          <p><%= @group.description %></p>
        </div>
 
-ch4.9
+ch4.9 create 'edit action'
+
   1. in edit method of groups_controller.rb
        def edit
          @group = Group.find(params[:id])
@@ -363,7 +418,8 @@ ch4.9
          <% end %>
        </div>
 
-ch4.10
+ch4.10 create 'update' action
+
   1. in update method of groups_controller.rb
        def update
          @group = Group.find(params[:id])
@@ -374,7 +430,8 @@ ch4.10
          end
        end
 
-ch4.11
+ch4.11 create 'destroy' action
+
   1. in destroy method of groups_controller.rb
        def destroy
          @group = Group.find(params[:id])
@@ -382,7 +439,8 @@ ch4.11
          redirect_to groups_path, alert: 'this group is deleted'  # <--- use alert: 'msg'
        end
 
-ch4.12
+ch4.12 outcome
+
   1. complete groups_controller.rb
 
 class GroupsController < ApplicationController
@@ -435,12 +493,25 @@ class GroupsController < ApplicationController
   end
 end
 
-ch4.13
+ch4.13 validates
+
   1. title can not be blank
        validates :title, presence: true
 
+- mvc and restful
 
-ch5.1
+-- http request and http verb
+-- mvc architecture
+-- rails flow
+-- project development and security
+-- rails/restful
+-- deep on crud
+-- strong parameter
+
+ch5 create post in group
+
+ch5.1 goal
+
   1. chapter goal
        本章的作業目標：
 
@@ -448,6 +519,8 @@ ch5.1
        - 並且文章網址是使用 /group/1/post/2 這種網址表示。
        - 資料驗證： post 必須要有內容才能儲存 / 新增
        - 用 before_action 來整理重複的程式碼
+
+ch5 pre-set
 
 ch5.2-a
   1. rails g controller posts
@@ -501,7 +574,8 @@ ch5.2-e
          belongs_to :group
        end
 
-ch5.3
+ch5.3 in group#show, display all posts
+
   1. in groups_controller.rb
        def show
          @group = Group.find(params[:id])
@@ -534,7 +608,8 @@ ch5.3
          </tbody>
        </table>
 
-ch5.4
+ch5.4 post_crud: pre-set
+
   1. in posts_controller.rb, add
        def new
        end
@@ -554,6 +629,8 @@ ch5.4
   2. in app/views/posts/, create
        new.html.erb
        edit.html.erb
+
+ch5.5 post_crud: create 'create' action
 
 ch5.5-a
   1. in show.html.erb of groups controller, add
@@ -585,6 +662,8 @@ ch5.5-c
        def post_params
          params.require(:post).permit(:content)
        end
+
+ch5.6 post_crud: create 'edit'/'update' action
 
 ch5.6-a
   1. in posts_controller.rb, add
@@ -621,7 +700,8 @@ ch5.6-b
     end
   end
 
-ch5.7
+ch5.7 post_crud: create 'destroy' action 
+
   1. in posts_controller.rb
 
        def destroy
@@ -632,7 +712,8 @@ ch5.7
          redirect_to group_path(@group), alert: 'post destroyed'
        end
 
-ch5.8
+ch5.8 post_crud: validates, store/creat post only if nonempty
+
   1. content can not be empty
 
       class Post < ActiveRecord::Base
@@ -640,7 +721,8 @@ ch5.8
         validates :content, presence: true
       end
 
-ch5.9
+ch5.9 post_crud: use befroe_action
+
   1. in posts_controller.rb
 
        before_action :find_group
@@ -648,8 +730,10 @@ ch5.9
        def find_group
          @group = Group.find(params[:group_id])
        end
+ch6 authentication
 
-ch6.1
+ch6.1 goal
+
   1. chapter goal
        本章的作業目標:
 
@@ -660,6 +744,8 @@ ch6.1
        客製化 devise => 新增一個 "name" 的欄位
        使用者功能 整合進 group / post 裡面 (作者機制)
        只有作者才能有 group / post 的修改/刪除權限
+
+ch6.2 install gem 'devise'
 
 ch6.2-a
   1. add gem 'devise'
@@ -716,7 +802,8 @@ ch6.2-d
 ch6.2-e
   1. rails g devise:views
 
-ch6.3
+ch6.3 add login/logout button in navbat
+
   1. add login/register buttons in _navbar.html.erb
 
         <% if !current_user %>
@@ -734,22 +821,26 @@ ch6.3
           </li>
         <% end %>
 
-ch6.4
+ch6.4 before_action: authenticate_user!
+
   1. in groups and posts controller, add
        before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
-ch6.5
+ch6.5 add new field: name
+
   1. rails g migration add_name_to_users name:string
 
   2. rake db:migrage
 
-ch6.6
+ch6.6 display name in devise view
+
   1. in app/views/devise/registrations/new.html.erb
 
        <%= f.input :email, required: true, autofocus: true %>
        <%= f.input :name,  required: true %>                    # <--- add
 
-ch6.7
+ch6.7 add strong parameters
+
   1. in application_controller.rb
 
        before_action :configure_permitted_parameters, if: :devise_controller?
@@ -761,26 +852,34 @@ ch6.7
          end
        end
 
-ch6.8
+ch6.8 in navbar, hi! email -> hi! name
+
   1.    Hi, <%= current_user.email %>
      -> Hi, <%= current_user.name %>
 
-ch6.9
+ch6.9 add 'account setting' and modify the setting of self
+
   1. add "account setting", edit_user_registration_path
 
-ch6.10
+ch6.10 add user_id in groups table
+
   1. rails g migration add_user_id_to_groups user_id:integer
   2. rake db:migrate
 
-ch6.11
+ch6.11 set assocation
+
   1. group belongs_to :user
   2. user  has_many :groups
 
-ch6.12
+ch6.12 only author cam edit/destroy group/post
+
   1. replace Group with current_user.groups
 
-ch6.13
+ch6.13 modify view, only author can edit/delete
+
   1. show edit/delete buttons only if author
+
+ch6.14 only author can edit/delete post
 
 ch6.14-a
   1. add user_id column to table posts
@@ -790,7 +889,10 @@ ch6.14-a
 ch6.14-b
   1. display edit/delete buttons only for post author
 
-ch7.1
+ch7 user can join and quit groups
+
+ch7.1 goal
+
   1. chapter goal
        本章的作業目標:
 
@@ -800,6 +902,7 @@ ch7.1
        User 在建立 group 後自動成為 group 的一員
        若不是 group 創辦人，就不會顯示 edit 按鈕
 
+ch7.2 group_user
 
 ch7.2-a
   1. rails g model group_user group_id:integer user_id:integer
@@ -808,16 +911,21 @@ ch7.2-a
 ch7.2-b
   1. set many-to-many association between user and group
 
-ch7.3
+ch7.3 only group member can create post
+
   1. only group members can create post
 
-ch7.4
+ch7.4 allow user to join or quit group
+
   1. display 'join group'/'quit group' buttons in view of groups#show
 
-ch7.5
+ch7.5 add group creator to group member by default
+
   1. add group creator to group members automatically
 
 ch7.6 in view of groups#show, display edit/delete button only if author
+
+ch8 backend
 
 ch8.1 chapter goal
 
@@ -895,9 +1003,12 @@ ch8.5 list the posts desc
 
 ch8.6 add posts_count in group model
 
-ch8.7 in group model, has_many :posts, dependant: :destroy
+ch8.7 fix bug: in group model, has_many :posts, dependant: :destroy
+
+ch9 refactor
 
 ch9.1 chapter goal
+
   1. chapter goal
        本章的作業目標:
 
@@ -907,11 +1018,13 @@ ch9.1 chapter goal
        使用 scope 整理 query
 
 ch9.2 use helper
+
   1. post.updated_at.to_s(:long)
   2. simple_format(post.content)
   3. truncate(group.title, length: 15)
 
-ch9.3
+ch9.3 write helper to create html
+
   1. create helper in app/helper/posts_helper.rb
        module PostsHelper
          def render_post_content(post)
@@ -919,12 +1032,16 @@ ch9.3
          end
        end
 
-ch9.4 extract common code to partial
+ch9.4 use partial: extract common code to partial
 
-ch9.5 use scope
+ch9.5 refactor model: use scope
+
   1. in post.rb, scope :recent, -> { order("updated_at DESC") }
 
+ch10 db:seed
+
 ch10.1 chapter goal
+
   1. chapter goal
        本章的作業目標:
 
@@ -932,11 +1049,13 @@ ch10.1 chapter goal
        撰寫 seed.rb 檔
        撰寫 rake dev:build => 自動化執行清空 + 重跑 migration + 種子載入資料
 
-ch10.2 review rake command
+ch10.2 rake concept: review rake command
+
   1. rake -T
   2. rake db:migrate
 
 ch10.3 write seeds.rb, rake db:seed, rake db:reset
+
   1. rake db:reset
        rake db:reset 是內建的 task ，會執行一整套流程, 包含
           db:drop        ( 資料庫移除 )
@@ -945,6 +1064,7 @@ ch10.3 write seeds.rb, rake db:seed, rake db:reset
        => db:seed        ( 執行資料庫種子 )
 
 ch10.4 create lib/tasks/dev.rake
+
   1. content
        namespace :dev do
          desc "Rebuild system"
@@ -952,10 +1072,24 @@ ch10.4 create lib/tasks/dev.rake
          task :rebuild => ["dev:build", "db:seed"]
        end
 
+ch11 deploy to server
 
 ch11.1 chapter goal
+
   1. chapter goal
      本章的作業目標:
      
      用手動的方式將寫好的 Rails 專案 deploy 到遠端 Server 上
      改 Capristrano 自動化部署，一個指令完成 Deploy
+
+ch11.2 deploy manually
+
+ch11.3 production setup
+
+ch11.4 capristrano
+
+ch11.5 note
+
+
+
+
